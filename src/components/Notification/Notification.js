@@ -60,7 +60,7 @@ export default function Notification(props) {
                 vertical: 'bottom',
                 horizontal: 'left',
             }}
-            open={open}
+            open={Boolean(open)}
         >
             <SnackbarContent
                 className={clsx(classes[variant], className)}
@@ -82,5 +82,5 @@ Notification.propTypes = {
     message: PropTypes.string,
     onClose: PropTypes.func,
     variant: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,
-    open: PropTypes.bool
+    open: PropTypes.number
 };
