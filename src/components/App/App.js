@@ -1,22 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { cn } from '@bem-react/classname';
 import './App.css';
-import { Container } from '@material-ui/core';
-import TodoListTable from "../../components/TodoListTable/TodoListTable";
-import { Provider } from 'mobx-react';
-import { createStore, initialState } from "../../store";
+import { Container, Fade } from '@material-ui/core';
+import Page from "../Page/Page";
+import { FADE_TIMEOUT } from '../../constants/constants';
 
 const block = cn('App');
 
 function App() {
+    const [fade, setFade] = React.useState(false);
+
+    useEffect(() => {
+        setFade(true);
+    }, []);
+
     return (
-        <Provider store={createStore(initialState)}>
-            <div className={block()}>
+        <div className={block()} >
+            <Fade in={fade} timeout={FADE_TIMEOUT}>
                 <Container>
-                    <TodoListTable/>
+                    <Page/>
                 </Container>
-            </div>
-        </Provider>
+            </Fade>
+        </div>
     );
 }
 

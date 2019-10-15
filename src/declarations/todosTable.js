@@ -16,6 +16,10 @@ import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 
+/**
+ * @desc material icons, that table use
+ * @author Arsen
+ */
 export const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
     Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
@@ -36,6 +40,10 @@ export const tableIcons = {
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
 };
 
+/**
+ * @desc columns for todolist table
+ * @author Arsen
+ */
 export const tableColumns = [
     { title: 'Title', field: 'title', searchable: false, customFilterAndSearch: () => false },
     { title: 'Description', field: 'description', searchable: false },

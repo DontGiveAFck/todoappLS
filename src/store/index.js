@@ -14,5 +14,5 @@ export function createStore(snapshot) {
 export const initialState = {
     isPageLoading: false,
     todos: [],
-    isError: false
+    searchFieldKey: ''
 };
